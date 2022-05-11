@@ -1,0 +1,15 @@
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>learning</title> <!-- your theme's name -->
+    <parent>Magento/luma</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+
+    <image id="related_products_list" type="small_image">
+        <width>240</width>
+        <height>360</height>
+    </image>
+
+    <image id="upsell_products_list" type="small_image">
+        <width>240</width>
+        <height>360</height>
+    </image>
+
+</theme>

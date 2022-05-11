@@ -1,0 +1,16 @@
+<?php
+/** \Magebit\PageListWidget\Block\Widget\PageList $block */
+?>
+<div>
+    <h2>
+        <?= $block->getData('title') ?>
+    </h2>
+    <ul>
+        <?php foreach ($block->getLinksArray() as $link) :?>
+            <li>
+                <a href="/<?= $link["link"] ?>"><?= $link["title"] ?></a>
+            </li>
+        <?php endforeach;?>
+    </ul>
+
+</div>

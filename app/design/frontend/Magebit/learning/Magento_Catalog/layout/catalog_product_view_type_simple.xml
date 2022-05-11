@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magebit, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- add attributes to top for simple products start -->
+        <referenceContainer name="alert.urls">
+            <container name="head-attributes" htmlTag="div" htmlClass="product-info-top-attributes">
+                <block class="Magebit\Helpers\Block\Product\View\Attributes" name="product.attributes.specs.table"
+                       template="Magento_Catalog::product/view/attributes.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="product.info.addtocart">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/view/addtocart_custom.phtml
+                </argument>
+            </action>
+        </referenceBlock>
+        <!-- add attributes to top for simple products end -->
+
+        <referenceContainer name="product.info.main" htmlClass="product-info-main custom"/>
+        <referenceContainer name="product.info.media" htmlClass="product media custom"/>
+
+        <!-- Remove excess blocks from simple products start-->
+
+
+        <referenceBlock name="product.attributes.wrapper" remove="true"/>
+        <referenceBlock name="product.info.type" remove="true"/>
+        <!-- Remove excess blocks from simple products end-->
+
+        <!-- Remove excess containers from simple products start-->
+        <referenceContainer name="product.info.addto" remove="true"/>
+        <referenceContainer name="product.reviews.wrapper" remove="true"/>
+        <!-- Remove excess containers from simple products end-->
+
+        <move element="product.info.upsell" destination="product.info.main" after="product.info.addtocart"/>
+        <move element="product.info.overview" destination="head-attributes" after="product.attributes.specs.table"/>
+
+    </body>
+</page>
+
+
+

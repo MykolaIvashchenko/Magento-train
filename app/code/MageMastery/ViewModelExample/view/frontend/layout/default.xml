@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page>
+    <body>
+        <referenceContainer name="magemastery.first.layout.container">
+            <block
+                name="view_model"
+                template="MageMastery_ViewModelExample::view_model.phtml"
+                before="magemastery.first.layout.example"
+            >
+                <arguments>
+                    <argument name="view_model" xsi:type="object">
+                        MageMastery\ViewModelExample\ViewModel\ProductViewModel
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

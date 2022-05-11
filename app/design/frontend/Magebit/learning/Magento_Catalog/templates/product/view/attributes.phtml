@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magebit, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) : ?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <ul class="data table additional-attributes" id="product-attributes-specs-table">
+            <?php foreach ($_additional as $_data) :?>
+                <li>
+                    <span class="attribute-name">
+                        <?= $block->escapeHtmlAttr($_data['label']) ?>:
+                    </span>
+                    <?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+    </div>
+<?php endif; ?>

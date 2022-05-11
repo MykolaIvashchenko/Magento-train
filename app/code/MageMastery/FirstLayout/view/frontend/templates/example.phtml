@@ -1,0 +1,17 @@
+<?php
+
+use Magento\Framework\View\Element\Template;
+/** @var Template $block */
+
+?>
+
+<p>With Layout support</p>
+
+<p><?= $block->getData('custom_parameter'); ?></p>
+<p><?= $block->getData('second_parameter'); ?></p>
+
+<?php if ($block->getData('data')): ?>
+    <?php foreach ($block->getData('data') as $elem): ?>
+        <a href="<?=$elem?>"><?=$elem?></a>
+    <?php endforeach; ?>
+<?php endif; ?>

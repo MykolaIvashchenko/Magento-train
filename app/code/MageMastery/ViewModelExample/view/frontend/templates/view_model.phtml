@@ -1,0 +1,11 @@
+<?php
+/**
+ * Copyright © Magebit, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** @var $viewModel MageMastery\ViewModelExample\ViewModel\ProductViewModel */
+
+$viewModel = $block->getViewModel();
+
+?>
+<h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
