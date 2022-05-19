@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magebit, Inc. All rights reserved.
+ * Template for displaying frequently asked questions.
+ */
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+$questions = $block->getQuestions();
+?>
+<div class="faq-wrapper">
+    <?php if (is_array($questions)): ?>
+        <div id="accordion" data-mage-init='{
+            "accordion":{
+                "active": [],
+                "collapsible": true,
+                "openedState": "active",
+                "multipleCollapsible": false
+            }}'>
+            <?php foreach ($questions as $question): ?>
+                <div class="question-wrapper" data-role="collapsible">
+                    <div class="question" data-role="trigger">
+                        <?= $question['question'] ?>
+                    </div>
+                    <div class="answer" data-role="content">
+                        <?= $question['answer'] ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <div class="no-questions">We're sorry, but the list of frequently asked questions hasn't been formed yet.</div>
+    <?php endif; ?>
+</div>
+
+
+

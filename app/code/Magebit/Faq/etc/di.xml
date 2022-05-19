@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Magebit\Faq\Api\Data\QuestionInterface" type="Magebit\Faq\Model\Question"/>
+    <preference for="Magebit\Faq\Api\QuestionRepositoryInterface" type="Magebit\Faq\Model\QuestionRepository"/>
+    <preference for="Magebit\Faq\Api\Data\QuestionSearchResultsInterface" type="Magebit\Faq\Model\QuestionSearchResults"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="faq_question_listing_data_source" xsi:type="string">Magebit\Faq\Model\ResourceModel\Question\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
